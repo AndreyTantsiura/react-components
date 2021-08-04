@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/react-components/static/css/main.5823e0a2.chunk.css",
+    "main.js": "/react-components/static/js/main.742beb56.chunk.js",
+    "main.js.map": "/react-components/static/js/main.742beb56.chunk.js.map",
+    "runtime-main.js": "/react-components/static/js/runtime-main.c755ed8f.js",
+    "runtime-main.js.map": "/react-components/static/js/runtime-main.c755ed8f.js.map",
+    "static/js/2.8925b265.chunk.js": "/react-components/static/js/2.8925b265.chunk.js",
+    "static/js/2.8925b265.chunk.js.map": "/react-components/static/js/2.8925b265.chunk.js.map",
+    "static/js/3.2575bdda.chunk.js": "/react-components/static/js/3.2575bdda.chunk.js",
+    "static/js/3.2575bdda.chunk.js.map": "/react-components/static/js/3.2575bdda.chunk.js.map",
+    "index.html": "/react-components/index.html",
+    "static/css/main.5823e0a2.chunk.css.map": "/react-components/static/css/main.5823e0a2.chunk.css.map",
+    "static/js/2.8925b265.chunk.js.LICENSE.txt": "/react-components/static/js/2.8925b265.chunk.js.LICENSE.txt",
+    "static/media/contacts.css": "/react-components/static/media/iphone.ead487a8.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c755ed8f.js",
+    "static/js/2.8925b265.chunk.js",
+    "static/css/main.5823e0a2.chunk.css",
+    "static/js/main.742beb56.chunk.js"
+  ]
+}
