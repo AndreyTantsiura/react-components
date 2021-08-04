@@ -1,0 +1,7 @@
+.wrapper {
+  background-position: center;
+  background-image: url("../img/iphone.png");
+  background-repeat: no-repeat;
+  height: 700px;
+  padding-top: 150px;
+}
