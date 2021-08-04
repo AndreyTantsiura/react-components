@@ -5,3 +5,48 @@
   height: 700px;
   padding-top: 150px;
 }
+.iphone_menu {
+  width: 280px;
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+p {
+  margin-bottom: 0;
+}
+input {
+  width: 280px;
+  height: 25px;
+  border: none;
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: #d6d6d6;
+  text-align: center;
+}
+.inner {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+.contact_card {
+  margin: 5px 0;
+}
+.contact_card:hover {
+  background-color: #d6d6d6;
+}
+.contact_heder {
+  display: flex;
+  justify-content: space-around;
+  cursor: pointer;
+}
+.gender {
+}
+.number_phone {
+  width: 280px;
+  margin-left: 10px;
+  padding-bottom: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  border-bottom: 2px solid #d6d6d6;
+}

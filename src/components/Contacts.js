@@ -45,20 +45,22 @@ function Contacts() {
 
   return (
     <div className="wrapper">
-      <h3>Contacts</h3>
-      <input type="text" name="search" placeholder="Search.." />
-      <div className="inner">
-        {contactsArr.map((contact) => {
-          return (
-            <Contact
-              firstName={contact.firstName}
-              lastName={contact.lastName}
-              phone={contact.phone}
-              gender={contact.gender}
-              key={contact.lastName}
-            />
-          );
-        })}
+      <div className="iphone_menu">
+        <p>Contacts</p>
+        <input type="text" name="search" placeholder="&#x2315; Search.." />
+        <div className="inner">
+          {contactsArr.map((contact) => {
+            return (
+              <Contact
+                firstName={contact.firstName}
+                lastName={contact.lastName}
+                phone={contact.phone}
+                gender={contact.gender}
+                key={contact.lastName}
+              />
+            );
+          })}
+        </div>
       </div>
     </div>
   );
