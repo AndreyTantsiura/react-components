@@ -43,6 +43,7 @@ function Contacts() {
 
   const [contactsArr, setContacts] = useState(contacts);
   const [search, setSearch] = useState("");
+  const [filteredContacts, setFilteredContacts] = useState("");
 
   const handleSearchChange = (e) => {
     setSearch(e.target.value);
@@ -55,6 +56,7 @@ function Contacts() {
       );
       return searchedContacts;
     });
+
     setContacts(filteredContacts);
   }, [search]);
 
@@ -68,6 +70,29 @@ function Contacts() {
           placeholder="&#x2315; search.."
           onChange={handleSearchChange}
         />
+        <div className="checkboxes">
+          <input
+            type="checkbox"
+            id="male"
+            name="male"
+            defaultChecked="checked"
+          />
+          <label htmlFor="male">Male</label>
+          <input
+            type="checkbox"
+            id="female"
+            name="female"
+            defaultChecked="checked"
+          />
+          <label htmlFor="female">Female</label>
+          <input
+            type="checkbox"
+            id="undetermined"
+            name="undetermined"
+            defaultChecked="checked"
+          />
+          <label htmlFor="undetermined">Undetermined</label>
+        </div>
         <div className="inner">
           {contactsArr.map((contact) => {
             return (

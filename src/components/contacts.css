@@ -32,6 +32,11 @@ p {
   text-align: center;
   font-size: large;
 }
+.checkboxes {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0 20px 0;
+}
 .inner {
   display: flex;
   flex-direction: column;
