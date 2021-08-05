@@ -43,22 +43,22 @@ function Contacts() {
 
   const [contactsArr, setContacts] = useState(contacts);
   const [search, setSearch] = useState("");
-  const [filteredContacts, setFilteredContacts] = useState("");
+  const [filteredContacts, setFilteredContacts] = useState([]);
 
   const handleSearchChange = (e) => {
     setSearch(e.target.value);
   };
 
   useEffect(() => {
-    const filteredContacts = contacts.filter((contact) => {
+    const filteredContacts = contactsArr.filter((contact) => {
       const searchedContacts = Object.values(contact).some((item) =>
         item.toLocaleLowerCase().includes(search.toLocaleLowerCase())
       );
       return searchedContacts;
     });
 
-    setContacts(filteredContacts);
-  }, [search, contacts]);
+    setFilteredContacts(filteredContacts);
+  }, [search, contactsArr]);
 
   return (
     <div className="wrapper">
@@ -94,7 +94,7 @@ function Contacts() {
           <label htmlFor="undetermined">Undetermined</label>
         </div>
         <div className="inner">
-          {contactsArr.map((contact) => {
+          {filteredContacts.map((contact) => {
             return (
               <Contact
                 firstName={contact.firstName}
