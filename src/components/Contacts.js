@@ -58,7 +58,7 @@ function Contacts() {
     });
 
     setContacts(filteredContacts);
-  }, [search]);
+  }, [search, contacts]);
 
   return (
     <div className="wrapper">
