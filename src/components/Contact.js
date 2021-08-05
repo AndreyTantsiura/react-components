@@ -10,7 +10,13 @@ function Contact(props) {
           <span>{props.firstName}</span>
           <span> {props.lastName}</span>
         </div>
-        <div className="gender">{props.gender}</div>
+        <div className="gender">
+          {props.gender === "male" ? (
+            <div>&#9794;</div>
+          ) : props.gender === "female" ? (
+            <div>&#9792;</div>
+          ) : null}
+        </div>
       </div>
       <div className="number_phone">{props.phone}</div>
     </div>

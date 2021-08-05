@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./contacts.css";
 import Contact from "./Contact";
 
@@ -42,12 +42,32 @@ function Contacts() {
   ];
 
   const [contactsArr, setContacts] = useState(contacts);
+  const [search, setSearch] = useState("");
+
+  const handleSearchChange = (e) => {
+    setSearch(e.target.value);
+  };
+
+  useEffect(() => {
+    const filteredContacts = contacts.filter((contact) => {
+      const searchedContacts = Object.values(contact).some((item) =>
+        item.toLocaleLowerCase().includes(search.toLocaleLowerCase())
+      );
+      return searchedContacts;
+    });
+    setContacts(filteredContacts);
+  }, [search]);
 
   return (
     <div className="wrapper">
       <div className="iphone_menu">
         <p>Contacts</p>
-        <input type="text" name="search" placeholder="&#x2315; Search.." />
+        <input
+          type="text"
+          className="search"
+          placeholder="&#x2315; search.."
+          onChange={handleSearchChange}
+        />
         <div className="inner">
           {contactsArr.map((contact) => {
             return (

@@ -1,3 +1,8 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #ebedf0;
+}
 .wrapper {
   background-position: center;
   background-image: url("../img/iphone.png");
@@ -13,21 +18,24 @@
   flex-direction: column;
 }
 p {
-  margin-bottom: 0;
+  margin: 20px 0 0 0;
+  font-size: 16px;
+  font-weight: bold;
 }
-input {
-  width: 280px;
+.search {
+  width: 275px;
   height: 25px;
   border: none;
-  margin: 0 auto;
+  margin: 10px 0;
   border-radius: 5px;
   background-color: #d6d6d6;
   text-align: center;
+  font-size: large;
 }
 .inner {
   display: flex;
   flex-direction: column;
-  width: 300px;
+  width: 280px;
 }
 .contact_card {
   margin: 5px 0;
@@ -37,14 +45,12 @@ input {
 }
 .contact_heder {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
   cursor: pointer;
-}
-.gender {
 }
 .number_phone {
   width: 280px;
-  margin-left: 10px;
   padding-bottom: 5px;
   font-size: 16px;
   font-weight: bold;
