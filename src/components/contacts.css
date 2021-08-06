@@ -33,9 +33,10 @@ p {
   font-size: large;
 }
 .checkboxes {
+  margin: 5px 0 20px 0;
   display: flex;
   justify-content: space-between;
-  margin: 5px 0 20px 0;
+  align-items: center;
 }
 .inner {
   display: flex;
