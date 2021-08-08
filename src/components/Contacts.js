@@ -67,21 +67,27 @@ function Contacts() {
 
   useEffect(() => {
     if (checked === "male") {
-      const filteredGenderContacts = Object.values(contacts).filter((contact) => {
-        return contact.gender !== "male";
-      });
+      const filteredGenderContacts = Object.values(filteredContacts).filter(
+        (contact) => {
+          return contact.gender !== "male";
+        }
+      );
       setFilteredContacts(filteredGenderContacts);
     }
     if (checked === "female") {
-      const filteredGenderContacts = Object.values(contacts).filter((contact) => {
-        return contact.gender !== "female";
-      });
+      const filteredGenderContacts = Object.values(filteredContacts).filter(
+        (contact) => {
+          return contact.gender !== "female";
+        }
+      );
       setFilteredContacts(filteredGenderContacts);
     }
     if (checked === "undetermined") {
-      const filteredGenderContacts = Object.values(contacts).filter((contact) => {
-        return contact.gender !== undefined;
-      });
+      const filteredGenderContacts = Object.values(filteredContacts).filter(
+        (contact) => {
+          return contact.gender !== undefined;
+        }
+      );
       setFilteredContacts(filteredGenderContacts);
     }
   }, [checked]);
