@@ -40,7 +40,7 @@ const contacts = [
   },
 ];
 
-function Contacts() {
+const Contacts = () => {
   const [contactsArr, setContacts] = useState(contacts);
   const [search, setSearch] = useState("");
   const [filteredContacts, setFilteredContacts] = useState([]);
