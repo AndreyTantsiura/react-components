@@ -44,7 +44,7 @@ const Contacts = () => {
   const [contactsArr, setContacts] = useState(contacts);
   const [search, setSearch] = useState("");
   const [filteredContacts, setFilteredContacts] = useState([]);
-  const [checked, setChecked] = useState(["male", "female", "undetermined"]);
+  const [checked, setChecked] = useState([]);
 
   const handleSearchChange = (e) => {
     setSearch(e.target.value);
@@ -66,7 +66,7 @@ const Contacts = () => {
   };
 
   useEffect(() => {
-    if (checked === "male") {
+    if (checked.includes("male")) {
       const filteredGenderContacts = Object.values(filteredContacts).filter(
         (contact) => {
           return contact.gender !== "male";
@@ -74,7 +74,7 @@ const Contacts = () => {
       );
       setFilteredContacts(filteredGenderContacts);
     }
-    if (checked === "female") {
+    if (checked.includes("female")) {
       const filteredGenderContacts = Object.values(filteredContacts).filter(
         (contact) => {
           return contact.gender !== "female";
@@ -82,7 +82,7 @@ const Contacts = () => {
       );
       setFilteredContacts(filteredGenderContacts);
     }
-    if (checked === "undetermined") {
+    if (checked.includes("undetermined")) {
       const filteredGenderContacts = Object.values(filteredContacts).filter(
         (contact) => {
           return contact.gender !== undefined;
@@ -146,6 +146,6 @@ const Contacts = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Contacts;
