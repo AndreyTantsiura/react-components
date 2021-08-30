@@ -44,29 +44,34 @@ const Contacts = () => {
   const [contactsArr, setContacts] = useState(contacts);
   const [search, setSearch] = useState("");
   const [filteredContacts, setFilteredContacts] = useState([]);
-  const [checked, setChecked] = useState([]);
+  const [isChecked, setIsChecked] = useState(true);
+  const [checked, setChecked] = useState("");
 
   const handleSearchChange = (e) => {
     setSearch(e.target.value);
   };
 
-  useEffect(() => {
-    const filteredContacts = contactsArr.filter((contact) => {
-      const searchedContacts = Object.values(contact).some((item) =>
-        item.toLocaleLowerCase().includes(search.toLocaleLowerCase())
-      );
-      return searchedContacts;
-    });
-
-    setFilteredContacts(filteredContacts);
-  }, [search, contactsArr]);
-
   const handleCheckBoxes = (e) => {
+    setIsChecked(!isChecked);
     setChecked(e.target.id);
   };
 
   useEffect(() => {
-    if (checked.includes("male")) {
+    let filteredContacts = contactsArr;
+    if (search) {
+      filteredContacts = filteredContacts.filter((contact) => {
+        const { firstName, lastName, phone } = contact;
+        return (
+          firstName.toLowerCase().includes(search.toLowerCase()) ||
+          lastName.toLowerCase().includes(search.toLowerCase()) ||
+          phone.includes(search)
+        );
+      });
+    }
+
+    setFilteredContacts(filteredContacts);
+
+    if (!isChecked && checked === "male") {
       const filteredGenderContacts = Object.values(filteredContacts).filter(
         (contact) => {
           return contact.gender !== "male";
@@ -74,7 +79,7 @@ const Contacts = () => {
       );
       setFilteredContacts(filteredGenderContacts);
     }
-    if (checked.includes("female")) {
+    if (!isChecked && checked === "female") {
       const filteredGenderContacts = Object.values(filteredContacts).filter(
         (contact) => {
           return contact.gender !== "female";
@@ -82,7 +87,7 @@ const Contacts = () => {
       );
       setFilteredContacts(filteredGenderContacts);
     }
-    if (checked.includes("undetermined")) {
+    if (!isChecked && checked === "undetermined") {
       const filteredGenderContacts = Object.values(filteredContacts).filter(
         (contact) => {
           return contact.gender !== undefined;
@@ -90,7 +95,7 @@ const Contacts = () => {
       );
       setFilteredContacts(filteredGenderContacts);
     }
-  }, [checked]);
+  }, [isChecked, search, contactsArr]);
 
   return (
     <div className="wrapper">
@@ -105,26 +110,29 @@ const Contacts = () => {
 
         <div className="checkboxes">
           <input
+            className="checkBox"
             type="checkbox"
             id="male"
             name="male"
-            defaultChecked={checked}
+            defaultChecked={isChecked}
             onChange={handleCheckBoxes}
           />
           <label htmlFor="male">Male</label>
           <input
+            className="checkBox"
             type="checkbox"
             id="female"
             name="female"
-            defaultChecked={checked}
+            defaultChecked={isChecked}
             onChange={handleCheckBoxes}
           />
           <label htmlFor="female">Female</label>
           <input
+            className="checkBox"
             type="checkbox"
             id="undetermined"
             name="undetermined"
-            defaultChecked={checked}
+            defaultChecked={isChecked}
             onChange={handleCheckBoxes}
           />
           <label htmlFor="undetermined">Undetermined</label>
