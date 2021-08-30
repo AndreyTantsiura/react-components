@@ -49,6 +49,7 @@ const Contacts = () => {
 
   const handleSearchChange = (e) => {
     setSearch(e.target.value);
+    setContacts(contacts);
   };
 
   const handleCheckBoxes = (e) => {
@@ -71,7 +72,7 @@ const Contacts = () => {
 
     setFilteredContacts(filteredContacts);
 
-    if (!isChecked && checked === "male") {
+    if (!isChecked && checked.includes("male")) {
       const filteredGenderContacts = Object.values(filteredContacts).filter(
         (contact) => {
           return contact.gender !== "male";
@@ -79,7 +80,7 @@ const Contacts = () => {
       );
       setFilteredContacts(filteredGenderContacts);
     }
-    if (!isChecked && checked === "female") {
+    if (!isChecked && checked.includes("female")) {
       const filteredGenderContacts = Object.values(filteredContacts).filter(
         (contact) => {
           return contact.gender !== "female";
@@ -87,7 +88,7 @@ const Contacts = () => {
       );
       setFilteredContacts(filteredGenderContacts);
     }
-    if (!isChecked && checked === "undetermined") {
+    if (!isChecked && checked.includes("undetermined")) {
       const filteredGenderContacts = Object.values(filteredContacts).filter(
         (contact) => {
           return contact.gender !== undefined;
@@ -95,7 +96,7 @@ const Contacts = () => {
       );
       setFilteredContacts(filteredGenderContacts);
     }
-  }, [isChecked, search, contactsArr]);
+  }, [isChecked, checked, search, contactsArr]);
 
   return (
     <div className="wrapper">
